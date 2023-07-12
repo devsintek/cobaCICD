@@ -1,11 +1,11 @@
 version: "3.9"
 services:
-  cobsCICD:
+  cobs-cicd:
     build:
       context: .
       dockerfile: Dockerfile
-    image: cobsCICD:latest
-    container_name: cobsCICD
+    image: cobs-cicd:latest
+    container_name: cobs-cicd
     volumes:
 #      - .:/srv/nama_folder # sama dengan path dibawah
        - /home/devsintek/docker/cobaCICD:/srv/cobaCICD
