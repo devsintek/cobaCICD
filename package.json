@@ -1,0 +1,13 @@
+{
+  "name": "cobsCICD",
+  "version": "1.0.0",
+  "description": "coba CICD",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
+  },
+  "scripts": {
+    "start": "node app.js"
+  }
+}
