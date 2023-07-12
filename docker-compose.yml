@@ -1,0 +1,20 @@
+version: "3.9"
+services:
+  cobsCICD:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: cobsCICD:latest
+    container_name: cobsCICD
+    volumes:
+#      - .:/srv/nama_folder # sama dengan path dibawah
+       - /home/devsintek/docker/cobaCICD:/srv/cobaCICD
+       - /srv/cobaCICD/node_modules
+    ports:
+      - "62303:62303"
+    command: npm start
+    restart: unless-stopped
+networks:
+  default:
+    external:
+      name: mariadb_default
