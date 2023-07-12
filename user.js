@@ -1,6 +1,6 @@
 const greeting = (name) => {
     if(name){
-        return `Hello ${name}`
+        return `Hellos ${name}`
     }
     return
 }
