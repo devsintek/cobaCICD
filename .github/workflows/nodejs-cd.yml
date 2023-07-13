@@ -33,4 +33,4 @@ jobs:
              sudo git pull origin main
              sudo git status
              sudo npm install --only=prod
-             sudo pm2 restart cobaCICD
+             #sudo pm2 restart cobaCICD
