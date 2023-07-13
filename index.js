@@ -1,5 +1,16 @@
-const server = require('./server')
-const PORT = process.env.PORT || 62303
-server.listen(PORT, () => {
-    console.log(`This app running on http://localhost:${PORT}`)
-})
+const https = require('https');
+const fs = require('fs');
+
+const options = {
+  key: fs.readFileSync('private.key'),
+  cert: fs.readFileSync('certificate.crt')
+};
+
+const server = https.createServer(options, (req, res) => {
+  res.writeHead(200);
+  res.end('Hi Beb, apa kabar?');
+});
+
+server.listen(62303, () => {
+  console.log('HTTPS server listening on port ...');
+});
