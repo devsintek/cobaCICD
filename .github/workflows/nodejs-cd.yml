@@ -30,7 +30,7 @@ jobs:
           port: 22
           script: |
              cd /home/devsintek/docker/cobaCICD
-             git pull origin main
-             git status
-             npm install --only=prod
-             pm2 restart cobaCICD
+             sudo git pull origin main
+             sudo git status
+             sudo npm install --only=prod
+             sudo pm2 restart cobaCICD
