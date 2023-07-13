@@ -37,6 +37,7 @@ RUN apt-get install -y nodejs
 # when we change our application's nodejs dependencies:
 COPY package.json /tmp/package.json
 RUN cd /tmp && npm install
+RUN npm install pm2 -g
 RUN mkdir -p /srv/cobaCICD && cp -a /tmp/node_modules /srv/cobaCICD
 
 # Menentukan direktori kerja di dalam kontainer
@@ -49,4 +50,5 @@ COPY . /srv/cobaCICD
 EXPOSE 62303
 
 # Menjalankan perintah lain yang diperlukan untuk menjalankan aplikasi Anda
-CMD ["npm", "start"]
+#CMD ["npm", "start"]
+CMD ["pm2", "start", "index.js", "--name", "cobacicd"]

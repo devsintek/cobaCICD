@@ -18,18 +18,20 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      # - name: CD
-      #   run: echo 'CD is Disabled (Check workflow comment for the code).'
-       - name: Deploy using ssh
-         uses: appleboy/ssh-action@master
-         with:
-           host: ${{ secrets.HOST }}
-           username: ${{ secrets.USERNAME }}
-           key: ${{ secrets.PRIVATE_KEY }}
-           port: 22
-           script: |
-             cd ~/docker/cobaCICD
-             git pull origin main
-             git status
-             npm install --only=prod
-             pm2 restart cobaCICD
+      - name: CD
+        run: echo 'CD is Disabled (Check workflow comment for the code).'
+      - name: Deploy using ssh server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.PRIVATE_KEY }}
+          passphrase: ${{ secrets.PASSPHRASE }}
+          port: 22
+          script: |
+             cd /home/devsintek/docker/cobaCICD
+             sudo git pull origin main
+             sudo docker restart cobs-cicd
+#             sudo git status
+#             sudo npm install --only=prod
+#             sudo pm2 restart index.js
