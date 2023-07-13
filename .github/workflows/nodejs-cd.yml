@@ -29,7 +29,7 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           port: 22
           script: |
-             cd ~/cobaCICD
+             cd /home/devsintek/docker/cobaCICD
              git pull origin main
              git status
              npm install --only=prod
