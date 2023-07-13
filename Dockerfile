@@ -37,6 +37,7 @@ RUN apt-get install -y nodejs
 # when we change our application's nodejs dependencies:
 COPY package.json /tmp/package.json
 RUN cd /tmp && npm install
+RUN npm install pm2 -g
 RUN mkdir -p /srv/cobaCICD && cp -a /tmp/node_modules /srv/cobaCICD
 
 # Menentukan direktori kerja di dalam kontainer
