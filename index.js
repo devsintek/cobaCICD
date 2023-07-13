@@ -8,7 +8,7 @@ const options = {
 
 const server = https.createServer(options, (req, res) => {
   res.writeHead(200);
-  res.end('Hi Beb, apa kabar?');
+  res.end('sedang mencoba proses ci cd');
 });
 
 server.listen(62303, () => {
