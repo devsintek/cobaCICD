@@ -31,6 +31,7 @@ jobs:
           script: |
              cd /home/devsintek/docker/cobaCICD
              sudo git pull origin main
-             sudo git status
-             sudo npm install --only=prod
-             sudo pm2 restart index.js
+             sudo docker restart cobs-cicd
+#             sudo git status
+#             sudo npm install --only=prod
+#             sudo pm2 restart index.js
