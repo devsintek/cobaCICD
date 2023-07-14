@@ -50,5 +50,4 @@ COPY . /srv/cobaCICD
 EXPOSE 62303
 
 # Menjalankan perintah lain yang diperlukan untuk menjalankan aplikasi Anda
-#CMD ["npm", "start"]
-CMD ["pm2", "start", "index.js", "--name", "cobacicd"]
+CMD ["npm", "start"]
